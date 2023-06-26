@@ -1015,6 +1015,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#getmail" class="md-nav__link">
+    Getmail
+  </a>
+  
+    <nav class="md-nav" aria-label="Getmail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable_getmail" class="md-nav__link">
+    ENABLE_GETMAIL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmail_poll" class="md-nav__link">
+    GETMAIL_POLL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ldap" class="md-nav__link">
     LDAP
   </a>
@@ -1922,6 +1949,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../advanced/mail-getmail/" class="md-nav__link">
+        Email Gathering with Getmail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -1930,17 +1971,17 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8_7" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_4_8_7" id="__nav_4_8_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4_8_8" id="__nav_4_8_8_label" tabindex="0">
           Email Forwarding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_8_7">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_8_8">
           <span class="md-nav__icon md-icon"></span>
           Email Forwarding
         </label>
@@ -2933,6 +2974,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#getmail" class="md-nav__link">
+    Getmail
+  </a>
+  
+    <nav class="md-nav" aria-label="Getmail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable_getmail" class="md-nav__link">
+    ENABLE_GETMAIL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmail_poll" class="md-nav__link">
+    GETMAIL_POLL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ldap" class="md-nav__link">
     LDAP
   </a>
@@ -3402,6 +3470,19 @@
                   
 
   
+    <a href="https://github.com/docker-mailserver/docker-mailserver/edit/master/docs/content/config/environment.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docker-mailserver/docker-mailserver/raw/master/docs/content/config/environment.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
   
 
 
@@ -3413,7 +3494,7 @@
 </div>
 <h4 id="general"><a class="toclink" href="#general">General</a></h4>
 <h5 id="override_hostname"><a class="toclink" href="#override_hostname">OVERRIDE_HOSTNAME</a></h5>
-<p>If you can't set your hostname (<em>eg: you're in a container platform that doesn't let you</em>) specify it via this environment variable. It will have priority over <code>docker run --hostname</code>, or the equivalent <code>hostname:</code> field in <code>docker-compose.yml</code>.</p>
+<p>If you can't set your hostname (<em>eg: you're in a container platform that doesn't let you</em>) specify it via this environment variable. It will have priority over <code>docker run --hostname</code>, or the equivalent <code>hostname:</code> field in <code>compose.yaml</code>.</p>
 <ul>
 <li><strong>empty</strong> =&gt; Uses the <code>hostname -f</code> command to get canonical hostname for DMS to use.</li>
 <li>=&gt; Specify an FQDN (fully-qualified domain name) to serve mail for. The hostname is required for DMS to function correctly.</li>
@@ -3516,7 +3597,7 @@
 <li><strong>0</strong> =&gt; fail2ban service disabled</li>
 <li>1 =&gt; Enables fail2ban service</li>
 </ul>
-<p>If you enable Fail2Ban, don't forget to add the following lines to your <code>docker-compose.yml</code>:</p>
+<p>If you enable Fail2Ban, don't forget to add the following lines to your <code>compose.yaml</code>:</p>
 <div class="highlight"><pre><span></span><code>cap_add:
 <span class="w">  </span>-<span class="w"> </span>NET_ADMIN
 </code></pre></div>
@@ -3702,7 +3783,11 @@ expand_keys = true;
 <p>When enabled,</p>
 <ol>
 <li>the "<a href="https://rspamd.com/doc/configuration/statistic.html#autolearning">autolearning</a>" feature is turned on;</li>
-<li>the Bayes classifier will be trained when moving mails from or to the Junk folder (with the help of Sieve scripts).</li>
+<li>the Bayes classifier will be trained (with the help of Sieve scripts) when moving mails<ol>
+<li>from anywhere to the <code>Junk</code> folder (learning this email as spam);</li>
+<li>from the <code>Junk</code> folder into the <code>INBOX</code> (learning this email as ham).</li>
+</ol>
+</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Attention</p>
@@ -3714,7 +3799,7 @@ expand_keys = true;
 <li>1 =&gt; Enabled</li>
 </ul>
 <h5 id="rspamd_hfilter"><a class="toclink" href="#rspamd_hfilter">RSPAMD_HFILTER</a></h5>
-<p>Can be used to enable or disable the <a href="https://www.rspamd.com/doc/modules/hfilter.html">Hfilter group module</a>. This is used by DMS to adjust the <code>HFILTER_HOSTNAME_UNKNOWN</code> symbol, increasing it's default weight to act similar to Postfix's <code>reject_unknown_client_hostname</code>, without the need to outright reject a message.</p>
+<p>Can be used to enable or disable the <a href="https://www.rspamd.com/doc/modules/hfilter.html">Hfilter group module</a>. This is used by DMS to adjust the <code>HFILTER_HOSTNAME_UNKNOWN</code> symbol, increasing its default weight to act similar to Postfix's <code>reject_unknown_client_hostname</code>, without the need to outright reject a message.</p>
 <ul>
 <li>0 =&gt; Disabled</li>
 <li><strong>1</strong> =&gt; Enabled</li>
@@ -3786,7 +3871,7 @@ If this is not set and reports are enabled with the old options, logrotate will 
 <p class="admonition-title">Note</p>
 <p><code>LOGROTATE_INTERVAL</code> only manages <code>logrotate</code> within the container for services we manage internally.</p>
 <p>The entire log output for the container is still available via <code>docker logs mailserver</code> (or your respective container name). If you want to configure external log rotation for that container output as well, : <a href="https://docs.docker.com/config/containers/logging/configure/">Docker Logging Drivers</a>.</p>
-<p>By default, the logs are lost when the container is destroyed (eg: re-creating via <code>docker-compose down &amp;&amp; docker-compose up -d</code>). To keep the logs, mount a volume (to <code>/var/log/mail/</code>).</p>
+<p>By default, the logs are lost when the container is destroyed (eg: re-creating via <code>docker compose down &amp;&amp; docker compose up -d</code>). To keep the logs, mount a volume (to <code>/var/log/mail/</code>).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3860,6 +3945,17 @@ If this is not set and reports are enabled with the old options, logrotate will 
 <p><strong>0</strong> =&gt; <code>fetchmail</code> runs with a single config file <code>/etc/fetchmailrc</code>
   <strong>1</strong> =&gt; <code>/etc/fetchmailrc</code> is split per poll entry. For every poll entry a separate fetchmail instance is started  to allow having multiple imap idle configurations defined.</p>
 <p>Note: The defaults of your fetchmailrc file need to be at the top of the file. Otherwise it won't be added correctly to all separate <code>fetchmail</code> instances.</p>
+<h4 id="getmail"><a class="toclink" href="#getmail">Getmail</a></h4>
+<h5 id="enable_getmail"><a class="toclink" href="#enable_getmail">ENABLE_GETMAIL</a></h5>
+<p>Enable or disable <code>getmail</code>.</p>
+<ul>
+<li><strong>0</strong> =&gt; Disabled</li>
+<li>1 =&gt; Enabled</li>
+</ul>
+<h5 id="getmail_poll"><a class="toclink" href="#getmail_poll">GETMAIL_POLL</a></h5>
+<ul>
+<li><strong>5</strong> =&gt; <code>getmail</code> The number of minutes for the interval. Min: 1; Max: 30; Default: 5.</li>
+</ul>
 <h4 id="ldap"><a class="toclink" href="#ldap">LDAP</a></h4>
 <h5 id="enable_ldap"><a class="toclink" href="#enable_ldap">ENABLE_LDAP</a></h5>
 <p>Deprecated. See <a href="#account_provisioner"><code>ACCOUNT_PROVISIONER</code></a>.</p>
@@ -3872,7 +3968,7 @@ If this is not set and reports are enabled with the old options, logrotate will 
 <ul>
 <li><strong>empty</strong> =&gt; mail.example.com</li>
 <li>=&gt; Specify the dns-name/ip-address where the ldap-server is listening, or an URI like <code>ldaps://mail.example.com</code></li>
-<li>NOTE: If you going to use DMS in combination with <code>docker-compose.yml</code> you can set the service name here</li>
+<li>NOTE: If you going to use DMS in combination with <code>compose.yaml</code> you can set the service name here</li>
 </ul>
 <h5 id="ldap_search_base"><a class="toclink" href="#ldap_search_base">LDAP_SEARCH_BASE</a></h5>
 <ul>
@@ -4201,7 +4297,7 @@ you to replace both instead of just the envelope sender.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>

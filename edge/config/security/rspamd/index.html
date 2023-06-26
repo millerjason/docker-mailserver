@@ -1097,6 +1097,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../advanced/mail-getmail/" class="md-nav__link">
+        Email Gathering with Getmail
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -1105,17 +1119,17 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8_7" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_8_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_4_8_7" id="__nav_4_8_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4_8_8" id="__nav_4_8_8_label" tabindex="0">
           Email Forwarding
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_8_7">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_8_8">
           <span class="md-nav__icon md-icon"></span>
           Email Forwarding
         </label>
@@ -1752,6 +1766,19 @@
                   
 
   
+    <a href="https://github.com/docker-mailserver/docker-mailserver/edit/master/docs/content/config/security/rspamd.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docker-mailserver/docker-mailserver/raw/master/docs/content/config/security/rspamd.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
   
 
 
@@ -1816,7 +1843,7 @@
 <div class="admonition question">
 <p class="admonition-title">What is <a href="../../../faq/#what-about-the-docker-datadmsconfig-directory"><code>docker-data/dms/config/</code></a>?</p>
 </div>
-<p>If you want to overwrite the default settings and / or provide your own settings, you can place files at <code>docker-data/dms/config/rspamd/override.d/</code> (a directory that is linked to <code>/etc/rspamd/override.d/</code>, if it exists) to override Rspamd and DMS default settings.</p>
+<p>If you want to overwrite the default settings and / or provide your own settings, you can place files at <code>docker-data/dms/config/rspamd/override.d/</code> (a directory that is linked to <code>/etc/rspamd/override.d/</code>, if it exists) to override Rspamd and DMS default settings. This directory will not do a complete file override, but a <a href="https://www.rspamd.com/doc/faq.html#what-are-the-locald-and-overrided-directories">forced override of the specific settings in that file</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Clashing Overrides</p>
 <p>Note that when also <a href="#with-the-help-of-a-custom-file">using the <code>rspamd-commands</code> file</a>, files in <code>override.d</code> may be overwritten in case you adjust them manually and with the help of the file.</p>
@@ -1857,14 +1884,28 @@
 <span class="na">ENABLE_AMAVIS</span><span class="o">=</span><span class="s">0</span>
 <span class="na">ENABLE_SPAMASSASSIN</span><span class="o">=</span><span class="s">0</span>
 </code></pre></div>
-<p>This will enable Rspamd and disable services you don't need when using Rspamd. Note that with this setup, the default DKIM signing that DMS provides does not work (as it is disabled)! To solve this issue, look at <a href="#dkim-signing">this subsection</a>.</p>
+<p>This will enable Rspamd and disable services you don't need when using Rspamd.</p>
 <h3 id="adjusting-and-extending-the-very-basic-configuration"><a class="toclink" href="#adjusting-and-extending-the-very-basic-configuration">Adjusting and Extending The Very Basic Configuration</a></h3>
-<p>Rspamd is running, but you want or need to adjust it?</p>
+<p>Rspamd is running, but you want or need to adjust it? First, create a file named <code>custom-commands.conf</code> under <code>docker-data/dms/config/rspamd</code> (which translates to <code>/tmp/docker-mailserver/rspamd/</code> inside the container). Then add you changes:</p>
 <ol>
-<li>Say you want to be able to easily look at the frontend Rspamd provides on port 11334 (default) without the need to enter a password (maybe because you already provide authorization and authentication). You will need to adjust the controller worker: create a file called <code>custom-commands.conf</code> and add the line <code>set-option-for-controller secure_ip "0.0.0.0/0"</code>. Place the file <code>custom-commands.conf</code> inside the directory on the host you mount to <code>/tmp/docker-mailserver/rspamd/</code> inside the container (in our documentation, we use <code>docker-data/dms/config/rspamd/</code> on the host for this purpose). And you're done! Note: this disables authentication on the website - make sure you know what you're doing!</li>
-<li>You additionally want to enable the auto-spam-learning for the Bayes module? No problem, just add another line to <code>custom-commands.conf</code> that looks like this: <code>set-option-for-module classifier-bayes autolearn true</code>.</li>
-<li>But the chartable module gets on your nerves? Just disable it by adding another line: <code>disable-module chartable</code>.</li>
+<li>Say you want to be able to easily look at the frontend Rspamd provides on port 11334 (default) without the need to enter a password (maybe because you already provide authorization and authentication). You will need to adjust the controller worker: <code>set-option-for-controller secure_ip "0.0.0.0/0"</code>.</li>
+<li>You additionally want to enable the auto-spam-learning for the Bayes module? No problem: <code>set-option-for-module classifier-bayes autolearn true</code>.</li>
+<li>But the chartable module gets on your nerves? Easy: <code>disable-module chartable</code>.</li>
 </ol>
+<details class="example">
+<summary>What Does the Result Look Like?</summary>
+<p>Here is what the file looks like in the end:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># See 1.</span>
+<span class="c1"># ATTENTION: this disables authentication on the website - make sure you know what you&#39;re doing!</span>
+set-option-for-controller<span class="w"> </span>secure_ip<span class="w"> </span><span class="s2">&quot;0.0.0.0/0&quot;</span>
+
+<span class="c1"># See 2.</span>
+set-option-for-module<span class="w"> </span>classifier-bayes<span class="w"> </span>autolearn<span class="w"> </span><span class="nb">true</span>
+
+<span class="c1"># See 3.</span>
+disable-module<span class="w"> </span>chartable
+</code></pre></div>
+</details>
 <h3 id="dkim-signing"><a class="toclink" href="#dkim-signing">DKIM Signing</a></h3>
 <p>There is a dedicated <a href="../../best-practices/dkim_dmarc_spf/#dkim">section for setting up DKIM with Rspamd in our documentation</a>.</p>
 <h3 id="abusix-integration"><a class="toclink" href="#abusix-integration"><em>Abusix</em> Integration</a></h3>
@@ -1923,7 +1964,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
